@@ -68,12 +68,39 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Get input information and use it to fill in the placeholders in a string&#xA;&#xA;You have the following template: &quot;Hello Mr &lt;first_name&gt; &lt;last_name&gt;, we would like to invite you to our opening event next week on &lt;day_of_week&gt;. Please confirm by the end of current week.&#xA;&#xA;Create a workflow to get input from the user and replace the provided input data in the phrase above.&#xA;&#xA;Note: Please create a string variable with the text above." DisplayName="Sequence Main" sap:VirtualizedContainerService.HintSize="376,537" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Get input information and use it to fill in the placeholders in a string&#xA;&#xA;You have the following template: &quot;Hello Mr &lt;first_name&gt; &lt;last_name&gt;, we would like to invite you to our opening event next week on &lt;day_of_week&gt;. Please confirm by the end of current week.&#xA;&#xA;Create a workflow to get input from the user and replace the provided input data in the phrase above.&#xA;&#xA;Note: Please create a string variable with the text above." DisplayName="Sequence Main" sap:VirtualizedContainerService.HintSize="376,670" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="Hello Mr &lt;first_name&gt; &lt;last_name&gt;, we would like to invite you to our opening event next week on &lt;day_of_week&gt;. Please confirm by the end of current week." Name="eventMessage" />
-      <Variable x:TypeArguments="x:String" Name="firstName" />
-      <Variable x:TypeArguments="x:String" Name="lastName" />
+      <Variable x:TypeArguments="x:String" Name="eventMessage">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Hello Mr. &lt;first_name&gt; &lt;last_name&gt;, we would like to invite you to our opening event next week on &lt;day_of_week&gt;. Please confirm by the end of current week.</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="firstName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Clive</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="lastName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Lewis</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="dayOfWeek" />
+      <Variable x:TypeArguments="x:String" Name="firstNameAnchor">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">&lt;first_name&gt;</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="lastNameAnchor">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">&lt;last_name&gt;</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="dayOfWeekAnchor">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">&lt;day_of_week&gt;</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -99,12 +126,27 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1">
-      <ui:MessageBox.Text>
-        <InArgument x:TypeArguments="x:Object">
-          <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">"First Name: " + firstName + ", Last Name: " + lastName + ", Day Of Week: " + dayOfWeek</mca:CSharpValue>
+    <Assign sap2010:Annotation.AnnotationText="Thrice the replace methods." DisplayName="Assign Replace" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">
+          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">eventMessage</mca:CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">eventMessage.Replace(firstNameAnchor, firstName).Replace(lastNameAnchor, lastName).Replace(dayOfWeekAnchor, dayOfWeek)</mca:CSharpValue>
         </InArgument>
-      </ui:MessageBox.Text>
-    </ui:MessageBox>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <WriteLine DisplayName="Write Line EventMessage" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1">
+      <InArgument x:TypeArguments="x:String">
+        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">eventMessage</mca:CSharpValue>
+      </InArgument>
+    </WriteLine>
   </Sequence>
 </Activity>
