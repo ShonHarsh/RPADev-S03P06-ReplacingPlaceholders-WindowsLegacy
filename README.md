@@ -2,7 +2,7 @@
 
 # S03P06 Replacing Placeholders
 
-This project is my solution in **C#** to the **Replacing Placeholders** practice found in section 03 practice 00 of the UiPath - RPA Developer Foundation course.
+This project is my solution in **C#** to the **Replacing Placeholders** practice found in section 03 practice 06 of the UiPath - RPA Developer Foundation course.
 
 ### Getting Started
 
@@ -20,7 +20,14 @@ After making a pull request or downloading the project, open the Main.xaml in Ui
 
 ### Sample Output
 
-//ToDo Complete program and record output
+```
+07/21/2021 16:29:03 => [Debug] Execution started for project: RPADev-S03P06-ReplacingPlaceholders
+07/21/2021 16:29:05 => [Info] RPADev-S03P06-ReplacingPlaceholders execution started
+07/21/2021 16:29:44 => [Debug] Hello Mr. Shon Harsh, we would like to invite you to our opening event next week on Saturday. Please confirm by the end of current week.
+07/21/2021 16:29:44 => [Info] RPADev-S03P06-ReplacingPlaceholders execution ended in: 00:00:30
+```
+
+
 
 ### RPA Developer Foundation Sections
 
