@@ -8,6 +8,16 @@ This project is my solution in **C#** to the **Replacing Placeholders** practice
 
 After making a pull request or downloading the project, open the Main.xaml in UiPath Studio.  The robot can be run with the play button in the ribbon and the result can be seen in output pane.
 
+#### PRACTICE REQUIREMENTS
+
+###### **Get input information and use it to fill in the placeholders in a string**
+
+You have the following template: "Hello Mr <first_name> <last_name>, we would like to invite you to our opening event next week on <day_of_week>. Please confirm by the end of current week.
+
+Create a workflow to get input from the user and replace the provided input data in the phrase above.
+
+**Note:** Please create a string variable with the text above.
+
 ### Details
 
 **Course:** UiPath - RPA Developer Foundation
