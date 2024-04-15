@@ -2,7 +2,7 @@
 
 # S03P06 Replacing Placeholders
 
-This project is my solution in **Windows Legacy (Deprecated), C#** to the **TITLE** practice found in section 03 practice 06 of the UiPath - RPA Developer Foundation course.
+This project is my solution in **Windows Legacy (Deprecated), C#** to the **Replacing Placeholders** practice found in section 03 practice 06 of the UiPath - RPA Developer Foundation course.
 
 ### Getting Started
 
@@ -12,13 +12,11 @@ After making a pull request or downloading the project, open the Main.xaml in Ui
 
 ###### **Get input information and use it to fill in the placeholders in a string**
 
-You have the following template: "Hello Mr <first_name> <last_name>, we would like to invite you to our opening event next week on <day_of_week>. Please confirm by the end of current week.
+You have the following template: "Hello Mr \<first_name> \<last_name>, we would like to invite you to our opening event next week on \<day_of_week>. Please confirm by the end of current week.
 
 Create a workflow to get input from the user and replace the provided input data in the phrase above.
 
 **Note:** Please create a string variable with the text above.
-
-Description
 
 ### Details
 
