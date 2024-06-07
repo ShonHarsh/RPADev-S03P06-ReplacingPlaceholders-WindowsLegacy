@@ -4,8 +4,8 @@
   "description": "Get input information and use it to fill in the placeholders in a string\r\n\r\nYou have the following template: \"Hello Mr <first_name> <last_name>, we would like to invite you to our opening event next week on <day_of_week>. Please confirm by the end of current week.\r\n\r\nCreate a workflow to get input from the user and replace the provided input data in the phrase above.",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.System.Activities": "[24.3.0]",
-    "UiPath.UIAutomation.Activities": "[24.2.2-preview]"
+    "UiPath.System.Activities": "[24.3.1]",
+    "UiPath.UIAutomation.Activities": "[24.4.2-preview]"
   },
   "webServices": [],
   "entitiesStores": [],
